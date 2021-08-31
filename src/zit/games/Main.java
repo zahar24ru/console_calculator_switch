@@ -6,19 +6,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Выбор операций \n 1.Сложение \n 2.Вычитание \n 3.Умножение \n 4.Деление \n 5.Остаток");
+        System.out.println("Консольный калькулятор v0.1");
         Scanner scanner = new Scanner(System.in);
         int a, b, operation, result;
-        operation = scanner.nextInt();
-
-        if (operation > 5) {
-            System.out.println("Допущена ошибка в выборе действия. Действие № " + operation + " Не найдено");
-            return;
-        }
-        System.out.println("Введите число А");
+        System.out.println("Введите число А:");
         a = scanner.nextInt();
-        System.out.println("Введите число B");
+        System.out.println("Введите число B:");
         b = scanner.nextInt();
+        System.out.println("Выберете операцию: \n 1 - Сложение; \n 2 - Вычитание; \n 3 - Умножение; \n 4 - Деление; \n 5 - Остаток;");
+        operation = scanner.nextInt();
         result = 0;
 
         switch (operation) {
@@ -44,6 +40,9 @@ public class Main {
                     return;
                 }
                 result = a % b;
+                break;
+            default:
+                System.out.println("Допущена ошибка в выборе действия. Действие № " + operation + " Не найдено");
                 break;
         }
         JOptionPane.showMessageDialog(null, "Результат = " + result + JOptionPane.INFORMATION_MESSAGE);
